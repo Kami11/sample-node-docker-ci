@@ -1,12 +1,12 @@
 #!/bin/bash
-docker build -t kostyaurysov/sample-node .
-docker push kostyaurysov/sample-node
+docker build -t kami11/sample-node .
+docker push kami11/sample-node
 
-ssh deploy@35.187.30.81 << EOF
-docker pull kostyaurysov/sample-node:latest
+ssh kamikadzeim11@35.187.62.117 << EOF
+docker push kami11/sample-node:latest
 docker stop web || true
 docker rm web || true
-docker rmi kostyaurysov/sample-node:current || true
-docker tag kostyaurysov/sample-node:latest kostyaurysov/sample-node:current
-docker run -d --net app --restart always --name web -p 80:80 kostyaurysov/sample-node:current
+docker rmi kami11/sample-node:current || true
+docker tag kami11/sample-node:latest kami11/sample-node:current
+docker run -d --net app --restart always --name web -p 80:80 kami11/sample-node:current
 EOF
