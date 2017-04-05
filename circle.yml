@@ -4,9 +4,9 @@ machine:
 
 dependencies:
   override:
-    - docker build -t kostyaurysov/sample-node .
+    - docker build -t kami11/sample-node .
 
 test:
   override:
-    - docker run kostyaurysov/sample-node npm test
+    - docker run kami11/sample-node npm test
 
