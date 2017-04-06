@@ -6,7 +6,6 @@ express()
  .get("*", function(req, res) {
 //    db("users").then(function(data) {
       res.send("Continuous integration and deployment finished");
-    });
  })
  .listen(80, function(err) {
     if (err) {
