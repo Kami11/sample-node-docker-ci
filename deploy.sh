@@ -1,5 +1,5 @@
 #!/bin/bash
-
+docker build -t kami11/sample-node .
 docker push kami11/sample-node
 
 ssh kamikadzeim11@35.187.62.117 << EOF
