@@ -1,11 +1,12 @@
 var config = require("./config");
-//var db = require("knex")(config);
+var db = require("knex")(config);
 var express = require("express");
 
 express()
  .get("*", function(req, res) {
-//    db("users").then(function(data) {
-      res.send("Continuous integration and deployment finished");
+    db("users").then(function(data) {
+      res.send(data);
+	});
  })
  .listen(80, function(err) {
     if (err) {
