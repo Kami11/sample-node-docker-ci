@@ -1,12 +1,12 @@
 var config = require("./config");
-var db = require("knex")(config);
+//var db = require("knex")(config);
 var express = require("express");
 
 express()
  .get("*", function(req, res) {
-    db("users").then(function(data) {
-      res.send(data);
-	});
+//    db("users").then(function(data) {
+      res.send("Hello World");
+//	});
  })
  .listen(80, function(err) {
     if (err) {
